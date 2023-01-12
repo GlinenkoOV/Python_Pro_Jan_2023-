@@ -131,3 +131,4 @@ python_pro.add_student('Hello') # Однакові студенти
 python_pro.add_student(st_5) # Однакові студенти
 print(python_pro)
 
+
