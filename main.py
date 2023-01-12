@@ -53,6 +53,6 @@ ordering.add_orders(goods_2)
 ordering.add_orders(goods_3)
 print(ordering)
 
-print(ordering)
+
 
 
