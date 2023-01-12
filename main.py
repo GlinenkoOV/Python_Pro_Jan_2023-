@@ -31,13 +31,6 @@ class Order:
             self.orders.append(order)
 
 
-    def sum_orders(self):
-        total = 0
-        for element in self.orders:
-            total += element
-        return total
-        print(sum_orders)
-
     def __str__(self):
         return f'{self.title}\n' + '\n'.join(map(str, self.orders))
         #return f'{self.title}\n {self.orders}\n' + '\n'.join(map(str, self.orders))
@@ -59,18 +52,8 @@ ordering.add_orders(goods_1)
 ordering.add_orders(goods_2)
 ordering.add_orders(goods_3)
 print(ordering)
-total = ordering.sum_orders()
-print(total)
 
 
 
 
-
-
-
-
-
-# А вы сохраните все купленные товары в список.
-# А потом если нужно вычислить сумму заказа то просто циклом
-# пройдите по всем элементам списка и вычисляйте сумму.
 
