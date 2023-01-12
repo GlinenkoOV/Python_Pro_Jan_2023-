@@ -61,6 +61,8 @@ ordering.add_orders(goods_3)
 print(ordering)
 total = ordering.sum_orders()
 print(total)
+print(total)
+
 
 
 
