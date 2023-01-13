@@ -1,61 +1,53 @@
-class Student:
-    def __init__(self, surname, name):
-        self.surname = surname
-        self.name = name
-        self.type = 'student'
+class Goods:
+    def __init__(self, price, description, dimensions):
+        self.price = price
+        self.description = description
+        self.dimensions = dimensions
+        print(f"Product description: {self.price} UAH,{self.description},{self.dimensions} g")
+
 
     def __str__(self):
-        return f'{self.type} - {self.surname} {self.name[0]}.'
+        return f'{self.price} {self.description} {self.dimensions}'
 
+    def get_sum(self):
+        for price in self.price():
+            return sum(self.price)
 
-class Instructor:
-    def __init__(self, surname, name):
-        self.surname = surname
+class Buyer:
+    def __init__(self, name, city, phone):
         self.name = name
-        self.type = 'instructor'
+        self.city = city
+        self.phone = phone
 
-    def __str__(self):
-        return f'{self.type} - {self.surname} {self.name[0]}.'
+        print(f"Buyer description:{self.name}, {self.city},{self.phone}")
+
+        def __str__(self):
+            return f'{self.name} {self.city} {self.phone}.'
 
 
-class Group:
-
-    def __init__(self, instructor, title):
-        self.instructor = instructor
+class Order:
+    def __init__(self, title):
         self.title = title
-        self.students = []
+        self.orders = []
 
-    def add_student(self, student):
-        self.students.append(student)
+    def add_orders(self, order: Goods):
+            self.orders.append(order)
+
 
     def __str__(self):
-        return f'{self.title}; {self.instructor}\n' + '\n'.join(map(str, self.students))
-
-    def __len__(self):
-        return len(self.students)
-
-teacher = Instructor('Tymchuk', 'Oleh')
-x_1 = Student('Ivanov1', 'Ivan')
-x_2 = Student('Ivanov2', 'Ivan')
-x_3 = Student('Ivanov3', 'Ivan')
-x_4 = Student('Ivanov4', 'Ivan')
-x_5 = Student('Ivanov5', 'Ivan')
-x_6 = Student('Ivanov6', 'Ivan')
-x_7 = Student('Ivanov7', 'Ivan')
-
-group = Group(teacher, 'Python Pro')
-group.add_student(x_1)
-group.add_student(x_2)
-group.add_student(x_3)
-group.add_student(x_4)
-group.add_student(x_5)
-group.add_student(x_6)
-group.add_student(x_7)
-
-print(group)
-print(len(group))
+        return f'{self.title}\n' +'\n'.join(map(str, self.orders))
 
 
-print('The End')
-print()
+
+goods_1 = Goods(6000, "Phone", 180)
+goods_2 = Goods(10000, "Tv", 3)
+goods_3 = Goods(2000, "Watch", 50)
+
+buyer = Buyer("Ivanov", "Ivan", "+380 96 918 5 912")
+
+ordering = Order('Order list:')
+ordering.add_orders(goods_1)
+ordering.add_orders(goods_2)
+ordering.add_orders(goods_3)
+print(ordering)
 
